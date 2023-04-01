@@ -2,8 +2,7 @@
 
 function ExpenceItem(){
    return  (
-   
-    <div>
+   <div>
         <h2>Expence Items</h2>
         <div>
             <ul>
