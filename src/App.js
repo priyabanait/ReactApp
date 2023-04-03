@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Expenses from './Expenceitem';
+import ExpenceItem from './Expenceitem';
 
 function App() {
 
@@ -34,25 +35,20 @@ function App() {
     <div>  
         <h1> Expence Item </h1>  
      
-        <table>  
-            <tr>  
-                <th>Title</th>  
-                <th>Amount</th>  
-                <th>Date</th>  
-            </tr>  
+        
     
-            {Expenses.map((item, index) => (  
-              <tr data-index={index}>  
-                <td>{item.title}</td>  
-                <td>{item.amount}</td>  
-                <td>{item.date.toISOString()}</td>  
-              </tr>  
-            ))}  
+            {Expenses.map((item) => (  
+               
+                <ExpenceItem title={item.title}
+               amount={item.amount} 
+                date={item.date} ></ExpenceItem>
+            
+            
     
-        </table>  
+            ))}
     
     </div>  
-  );  
+  ) 
 }
 
 export default App;
