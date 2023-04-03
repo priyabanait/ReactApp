@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Expenses from './Expenceitem';
+
 import ExpenceItem from './Expenceitem';
 
 function App() {
