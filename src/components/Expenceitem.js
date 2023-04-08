@@ -23,7 +23,6 @@ let ExpenceItem=( props)=>{
          </div>
          <button onClick={ChangeAmount}>Change Expense</button>
       </div>
-     
-   )
+     )
 }
 export default ExpenceItem;
