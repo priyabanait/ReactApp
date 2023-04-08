@@ -1,8 +1,8 @@
-import logo from './logo.svg';
+
 import React from 'react';
 import './App.css';
-
-import ExpenceItem from './Expenceitem';
+import ExpenseForm from './components/ExpenseForm';
+import ExpenceItem from './components/Expenceitem';
 
 
 const App=()=> {
@@ -15,7 +15,7 @@ const App=()=> {
   },
 {
   id:'e2',
-    title:'new TV',
+    title:'New TV',
     amount:799.49,
     date:new Date(2021,7,20),
 },
@@ -39,12 +39,14 @@ const App=()=> {
     
             {Expenses.map((item) => (  
                
-                <ExpenceItem title={item.title}
+                <ExpenceItem 
+                key={item.id}
+                title={item.title}
                amount={item.amount} 
                 date={item.date} ></ExpenceItem>
             
             ))}
-    
+    <ExpenseForm></ExpenseForm>
     </div>  
   ) 
 }
