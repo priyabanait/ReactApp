@@ -5,8 +5,8 @@ import ExpenseDetails from './ExpenseDetails';
 
 let ExpenceItem=( props)=>{
   
-   let [amount, setAmount]=useState(props.amount);
-   let ChangeAmount=()=>{
+   const [amount, setAmount]=useState(props.amount);
+   const ChangeAmount=()=>{
       setAmount('100');
       console.log(amount);
    };
