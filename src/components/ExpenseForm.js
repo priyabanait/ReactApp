@@ -18,8 +18,17 @@ export default function ExpenseForm() {
           function displayDate(event){
             setenteredDate(event.target.value);
             }
+            function submitData(event){
+              event.preventDefault();
+              let data={
+                title:enteredtitle,
+                amount:enteredAmount,
+                date:new Date(enteredDate)
+              }
+              console.log(data);
+            }
   return (
-    <form>
+    <form onSubmit={submitData}>
       <div className='newExpense'>
            <div className='title'>
             <label>Title: </label>
