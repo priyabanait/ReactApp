@@ -1,7 +1,7 @@
 
 import React from 'react';
 import './App.css';
-import ExpenseForm from './components/ExpenseForm';
+import NewExpense from './components/NewExpence/NewExpense';
 import ExpenceItem from './components/Expenceitem';
 
 
@@ -32,6 +32,10 @@ const App=()=> {
     date:new Date(2022,8,9),
 }
 ]
+const addExpensehandler=(expense)=>{
+  console.log('in app.js');
+  console.log(expense);
+}
 
   return  (  
     <div>  
@@ -46,7 +50,7 @@ const App=()=> {
                 date={item.date} ></ExpenceItem>
             
             ))}
-    <ExpenseForm></ExpenseForm>
+    <NewExpense onAddExpense={addExpensehandler}></NewExpense>
     </div>  
   ) 
 }
