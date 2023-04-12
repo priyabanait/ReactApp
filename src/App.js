@@ -3,8 +3,9 @@ import React,{useState} from 'react';
 import './App.css';
 import './components/ExpenceItem.css'
 import NewExpense from './components/NewExpence/NewExpense';
-import ExpenceItem from './components/Expenceitem';
+
 import ExpenseFilter from './components/ExpenseFilter';
+import ExpensesList from './components/ExpensesList';
 
 const DUMMY_EXPENSES=[{
   id:'e1',
@@ -22,7 +23,7 @@ id:'e2',
 id:'e3',
   title:'Car Insurance',
   amount:294.67,
-  date:new Date(2020,5,14),
+  date:new Date(2022,5,14),
 },
 {
 id:'e4',
@@ -44,7 +45,7 @@ const [filteredYear, setFilteredYear]=useState('2020')
 const filterChangeHandler=(selectedYear)=>{
   setFilteredYear(selectedYear)
   }
-  
+
   const filteredExpenses=expenses.filter((expense)=>{
  return expense.date.getFullYear().toString()===filteredYear;
   })
@@ -55,13 +56,7 @@ const filterChangeHandler=(selectedYear)=>{
        <NewExpense onAddExpense={addExpensehandler}></NewExpense> 
        <div className='expenses'>  
         <ExpenseFilter selected={filteredYear} onchangeFilter={filterChangeHandler}></ExpenseFilter>
-            {filteredExpenses.map((item) => (  
-              <ExpenceItem 
-                key={item.id}
-                title={item.title}
-               amount={item.amount} 
-                date={item.date} ></ExpenceItem>
-            ))}
+        <ExpensesList items={filteredExpenses}></ExpensesList>
             </div> 
          </div> 
         ) 
